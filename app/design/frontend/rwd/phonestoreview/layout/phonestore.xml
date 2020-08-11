@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+
+    <phonestore_test_helloworld translate="label"> <!--modulename_controllername_actionname-->
+        <label>Test Helloworld</label>
+
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/my-custom-template.phtml</template>
+            </action>
+        </reference>
+
+        <reference name="content"> <!--content is a name off block in layout-->
+            <block type="phonestore/test_helloworld" name="helloworld" template="phonestore/helloworld.phtml">
+                <block type="phonestore/test_helloworld" name="helloworld.left" template="phonestore/left.phtml"></block>
+            </block>
+        </reference>
+        <!--type = [modulename]/(folder)_[blockname]-->
+        <!--template se la duong dan toi file layout cua block-->
+
+        <parameters>
+            <link_options>
+                <label>Link Options</label>
+                <visible>1</visible>
+                <required>1</required>
+                <type>multiselect</type>
+                <source_model>phonestore/options</source_model>
+            </link_options>
+        </parameters>
+
+    </phonestore_test_helloworld>
+
+</layout>

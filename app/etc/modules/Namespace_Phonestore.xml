@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<config>
+    <!--register module-->
+    <modules>
+        <Namespace_Phonestore>
+            <active>true</active> <!--true|false-->
+            <codePool>local</codePool> <!--core|community|local--> <!--khai bao vi tri code cua module-->
+        </Namespace_Phonestore>
+    </modules>
+</config>

@@ -1,3 +1,0 @@
-<reference name="root">
-   <block type="adminhtml/sales_order_create_load" name="content"/>
-</reference>

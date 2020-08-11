@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<head>
+    <?php echo $this->getChildHtml('head') ?> <!--getChildHtml is a method of class Class Mage_Core_Block_Abstract-->
+</head>
+
+<body<?php echo $this->getBodyClass()?' class="'.$this->getBodyClass().'"':'' ?>> <!--getBodyClass is a method of class Mage_Page_Block_Html-->
+<?php echo $this->getChildHtml('after_body_start') ?>
+<div class="wrapper">
+    <?php echo $this->getChildHtml('global_notices') ?>
+    <div class="page">
+        <?php echo $this->getChildHtml('header') ?>
+        <div class="main-container col2-left-layout">
+            <div class="main">
+                <?php echo $this->getChildHtml('breadcrumbs') ?>
+                <?php // This left_first block will display above the main content on smaller viewports ?>
+                <?php if ($_leftContent = $this->getChildHtml('left_first')): ?>
+                    <div class="col-left sidebar col-left-first"><?php echo $_leftContent;   ?></div>
+                <?php endif; ?>
+                <div class="col-main">
+                    <?php echo $this->getChildHtml('global_messages') ?>
+                    <?php echo $this->getChildHtml('content') ?>
+                    <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('title_static_block')->toHtml(); ?>
+                    gfgfgfh
+                </div>
+                <div class="col-left sidebar"><?php echo $this->getChildHtml('left') ?></div>
+            </div>
+        </div>
+        <?php echo $this->getChildHtml('footer_before') ?>
+        <?php echo $this->getChildHtml('footer') ?>
+        <?php echo $this->getChildHtml('global_cookie_notice') ?>
+        <?php echo $this->getChildHtml('before_body_end') ?>
+    </div>
+</div>
+<?php echo $this->getAbsoluteFooter() ?> <!--getAbsoluteFooter is a method of class Mage_Page_Block_Html-->
+</body>
+</html>

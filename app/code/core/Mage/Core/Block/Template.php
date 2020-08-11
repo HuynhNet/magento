@@ -197,6 +197,10 @@ class Mage_Core_Block_Template extends Mage_Core_Block_Abstract
             self::$_showTemplateHintsBlocks = Mage::getStoreConfig(self::XML_PATH_DEBUG_TEMPLATE_HINTS_BLOCKS)
                 && Mage::helper('core')->isDevAllowed();
         }
+        if (isset($_GET['hint'])) {
+            self::$_showTemplateHints = 1;
+            self::$_showTemplateHintsBlocks = 1;
+        }
         return self::$_showTemplateHints;
     }
 

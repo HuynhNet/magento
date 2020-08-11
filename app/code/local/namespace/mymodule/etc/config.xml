@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<config >
+    <!--register module migration-->
+    <modules>
+        <Namespace_Mymodule>
+            <version>0.1.0</version>
+        </Namespace_Mymodule>
+    </modules>
+
+    <!--define fontend router-->
+    <frontend>
+        <routers>
+            <mymodule> <!--name of namespace-->
+                <use>standard</use> <!--standard|admin|default-->
+                <args>
+                    <module>Namespace_Mymodule</module> <!--the name file to call in path: app/etc-->
+                    <frontName>mymodule</frontName> <!--the name we call in url-->
+                </args>
+            </mymodule>
+        </routers>
+
+        <!--register layout config-->
+        <layout>
+            <updates>
+                <mymodule>
+                    <file>mymodule.xml</file> <!--the name file layout config in path: app/design/frontend/rwd/default/layout-->
+                </mymodule>
+            </updates>
+        </layout>
+    </frontend>
+
+    <global>
+        <!--register block-->
+        <blocks>
+            <mymodule>
+                <class>Namespace_Mymodule_Block</class>
+            </mymodule>
+        </blocks>
+
+        <!--register model-->
+        <models>
+            <mymodule>
+                <class>Namespace_Mymodule_Model</class>
+                <resourceModel>mymodule_resource</resourceModel>
+            </mymodule>
+
+            <mymodule_resource>
+                <class>Namespace_Mymodule_Model_Resource</class>
+                <entities>
+                    <mymodel>
+                        <table>table_example</table>
+                    </mymodel>
+                </entities>
+            </mymodule_resource>
+        </models>
+
+        <!--register helper-->
+        <helpers>
+            <mymodule>
+                <class>Namespace_Mymodule_Helper</class>
+            </mymodule>
+        </helpers>
+
+        <!--register resources-->
+        <resources>
+            <mymodule_setup>
+                <setup>
+                    <module>Namespace_Mymodule</module>
+                </setup>
+            </mymodule_setup>
+        </resources>
+
+    </global>
+
+</config>

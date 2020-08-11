@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<widgets>
+    <Phonestore_Helloworld type="Phonestore/helloworld">
+        <name>Top Searching Terms</name>
+        <description type="desc">Lists Top Searches</description>
+    </Phonestore_Helloworld>
+</widgets>
